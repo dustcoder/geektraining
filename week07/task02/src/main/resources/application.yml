@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    name: mysql_test
+    type: com.alibaba.druid.pool.DruidDataSource
+    #druid相关配置
+    druid:
+      master:
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/hackathon?allowMultiQueries=true
+        username: root
+        password: 123
+        #初始化连接数
+        initial-size: 10
+        #最小活跃连接数
+        min-size: 5
+        #最大活跃连接数
+        max-active: 30
+        #获取连接的等待时间
+        max-wait: 60000
+      slave:
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/mytest?allowMultiQueries=true
+        username: root
+        password: 123
